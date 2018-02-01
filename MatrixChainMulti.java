@@ -5,7 +5,7 @@ class MatrixChainMulti{
     }
     
     void getMin(){
-        int[] A = {5,2,3,4,6,7,8};
+        int[] A = {5,2,3,4,6,7,8,9};
         int n = A.length;
         int[][] M = new int[n][n];
         for(int i = 0; i < n - 1; i++){
@@ -13,6 +13,6 @@ class MatrixChainMulti{
                 M[j-1][j+i]= Math.min(M[j-1][j-1+i]+A[j-2]*A[j-1+i]*A[j+i],M[j][j+i]+A[j-2]*A[j-1]*A[j+i]);
             }
         }
-        System.out.println("Result is: "+M[1][6]);
+        System.out.println("Result is: "+M[1][n-1]);
     }
 }
